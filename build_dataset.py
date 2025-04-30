@@ -13,7 +13,7 @@ TODAY = datetime.utcnow().strftime("%Y-%m-%d")
 
 def query_finviz():
     scr = Overview()
-    scr.set_filter("sales5years%3Over20", "cap_smallover", "cap_megaUnder")
+    scr.set_filter(filters=["sales5years_o20", "cap_smallover", "cap_megaUnder"])
     return scr.screener_view()["Ticker"].tolist()
 
 def fetch_metrics(tk):
