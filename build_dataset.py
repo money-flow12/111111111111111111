@@ -12,8 +12,8 @@ MAX_MARKET_CAP = 100000
 TODAY = datetime.utcnow().strftime("%Y-%m-%d")
 
 def query_finviz():
-    filters = ["sales5years%3Over20", "cap_smallover", "cap_megaUnder"]
-    scr = Overview(); scr.set_filter(filters)
+    scr = Overview()
+    scr.set_filter("sales5years%3Over20", "cap_smallover", "cap_megaUnder")
     return scr.screener_view()["Ticker"].tolist()
 
 def fetch_metrics(tk):
